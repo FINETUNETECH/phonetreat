@@ -1,7 +1,25 @@
 from serviceapp.views import dashboard
 from .models import CustomUser, UserNotifications
 from rest_framework import viewsets, generics
+from rest_framework.views import from serviceapp.views import dashboard
+from .models import CustomUser, UserNotifications
+from rest_framework import viewsets, generics
 from rest_framework.views import APIView
+from rest_framework.response import Response
+from django.http import Http404
+from rest_framework import status
+import json
+from .serializers import NotificationSerializer, UserSerializer, ChangePasswordSerializer
+from rest_framework.permissions import IsAuthenticated
+
+# Remove this line as we're using relative imports
+# from user import serializers
+
+class UserNotificationList(APIView):
+    def get(self, request):
+        queryset = UserNotifications.objects.filter(user = request.user).order_by('-date_created')
+        serializer_class = NotificationSerializer(queryset, many=True)
+        return Response(serializer_class.data)View
 from rest_framework.response import Response
 from django.http import Http404
 from rest_framework import status
