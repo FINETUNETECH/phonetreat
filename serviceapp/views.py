@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from twilio.rest import Client
 
+
 from api.subcategory.models import SubCategory
 from api.maps.models import Maps
 from api.brand.models import Brand
@@ -20,7 +21,7 @@ from api.spares.models import History, Quality, Spare, SpareProperty, SpareVarie
 from api.request.models import Request
 from api.store.models import Stores
 from api.variant.models import Variant
-from user.models import CustomUser, UserNotifications
+from api.user.models import CustomUser, UserNotifications
 from .models import Contact, ScheduleCall
 from .decorators import allowed_users, check_staff_or_superuser
 
