@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'api.units',
     'api.request',
     'api.store',
-    'user',
+    'api.user',
     'api.bookings',
     'api.spares',
     'corsheaders',
@@ -147,7 +147,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-AUTH_USER_MODEL = 'user.CustomUser'
+AUTH_USER_MODEL = 'api.user.CustomUser'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'user.backends.EmailBackend',
