@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     'api.bookings',
     'api.spares',
     'corsheaders',
-    'user'
 ]
 
 MIDDLEWARE = [
